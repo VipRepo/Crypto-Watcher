@@ -1,0 +1,2 @@
+1. Backend code is inside crypto-service folder. Please follow instruction given in readme.md file inside that folder.
+2. Front end code is inside crypto-ui folder. Please follow instruction given in readme.md file inside that folder.

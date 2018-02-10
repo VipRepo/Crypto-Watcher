@@ -1,0 +1,49 @@
+<mat-card>
+  <span *ngIf="latestCurrenyDetail">
+    <h6 class="red">Live Detail</h6>
+    <h2 class="blue"><strong>Price</strong> {{latestCurrenyDetail.price}}</h2>
+    <h6 class="gray"><strong>Volume</strong> {{latestCurrenyDetail.txVolume}}</h6>
+    <span *ngIf="fetchingDetail">
+        <i class="fa fa-refresh fa-spin fa-lg fa-fw"></i>
+        <span class="sr-only">Loading...</span><br>
+    </span> 
+  </span>
+  <span *ngIf="!latestCurrenyDetail">
+      <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+      <span class="sr-only">Loading...</span><br>
+      <small>Loading Live Detail</small>
+  </span>
+
+  
+</mat-card>
+
+<mat-card>
+    <div class="example-container mat-elevation-z8">
+      <mat-table #detail [dataSource]="dataSource">
+     
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+        </ng-container>
+    
+     
+        <ng-container matColumnDef="price">
+          <mat-header-cell *matHeaderCellDef> Price(USD) </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="txVolume">
+          <mat-header-cell *matHeaderCellDef> Transaction Volume(USD) </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.txVolume}} </mat-cell>
+        </ng-container>
+    
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  
+  </mat-card>
+  

@@ -1,0 +1,11 @@
+
+ <mat-form-field>
+  <input matInput placeholder="All Currencies" #currency name="currency"
+  [(ngModel)]="query.currency">
+  <button mat-button *ngIf="query.currency" matSuffix 
+  mat-icon-button aria-label="Clear" (click)="query.currency='';">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+&nbsp;&nbsp;
+<button mat-raised-button color="primary" (click)="searchCurrencies();">Search</button>

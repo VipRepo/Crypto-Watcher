@@ -1,2 +1,6 @@
-1. Backend code is inside crypto-service folder. Please follow instruction given in readme.md file inside that folder.
-2. Front end code is inside crypto-ui folder. Please follow instruction given in readme.md file inside that folder.
+#Web application to show Crypto currencies and its details.
+
+#Technology:
+Angular 4
+NodeJS
+MongoDB
